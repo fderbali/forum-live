@@ -27,7 +27,7 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //Question::create($request->all());
+        Question::create($request->all());
         //auth()->user()->question()->create($request->all());
         return response('Created', Response::HTTP_CREATED);
     }
@@ -52,7 +52,8 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        $question->update($request->all());
+        return response('Updated', Response::HTTP_ACCEPTED);
     }
 
     /**
